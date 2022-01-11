@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './Button.css'
 
 const STYLES = ['btn_primary', 'btn_outline'];
