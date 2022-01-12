@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Nav.css'
 import { Button } from './Button';
 import { Link } from 'react-router-dom'
@@ -18,12 +18,16 @@ function Nav() {
         }
     }
 
+    useEffect(() => {
+        showButton();
+    }, [])
+
     window.addEventListener('resize', showButton)
 
     return (
         <nav className="navbar">
             <div className="navbar_container">
-                <Link to="/" className="navbar_logo">TRVL <i className="fab fa-typo3"></i>
+                <Link to="/" className="navbar_logo" onClick={closeMobileMenu}>TRVL <i className="fab fa-typo3"></i>
                 </Link>
                 <div className="menu_icon" onClick={handleClick}>
                     <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
